@@ -82,7 +82,7 @@ func (d *Database) GetDates(date time.Time, status bool, filter FilterMode) []Da
 
 	sql := "SELECT * FROM dates"
 	if (filter & FilterDate) == FilterDate {
-		sql += fmt.Sprintf(" WHERE (date = %d) AND", date.Unix)
+		sql += fmt.Sprintf(" WHERE (date = %d) AND", date.Unix())
 	}
 	if (filter & FilterStatus) == FilterStatus {
 		sql += fmt.Sprintf(" WHERE (status = %d) AND", getStatusInt(status))
