@@ -36,7 +36,7 @@ func (d *Database) Init() {
 	sql := `
 	CREATE TABLE "dates" (
 		"date"  "INTEGER",
-		"value" "INTEGER"
+		"status" "INTEGER"
 	);`
 	if _, err := d.db.Exec(sql); err != nil {
 		d.Close()
