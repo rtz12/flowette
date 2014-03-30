@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"strings"
 	"sync"
 	"time"
 
@@ -87,8 +86,10 @@ func (d *Database) GetDates(date time.Time, status bool, filter FilterMode) []Da
 	if (filter & FilterStatus) == FilterStatus {
 		sql += fmt.Sprintf(" WHERE (status = %d) AND", getStatusInt(status))
 	}
+	if filter > 0 {
+		sql = sql[:len(sql)-4] + ";"
+	}
 
-	sql = strings.TrimSuffix(sql, " AND") + ";"
 	rows, err := d.db.Query(sql)
 	if err != nil {
 		log.Fatal("Error retreiving dates")
