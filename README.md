@@ -1,7 +1,7 @@
 flowette
 ========
 
-`flowette` is the future backend server for [http://flostatus.neocities.org](http://flostatus.neocities.org).
+`flowette` is the ~~future~~ backend server for [http://flostatus.neocities.org](http://flostatus.neocities.org).
 
 It's unlikely that this project is useful to you and It's far from being finished.
 
